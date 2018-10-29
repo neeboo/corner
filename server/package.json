@@ -1,0 +1,62 @@
+{
+  "name": "corner-server",
+  "version": "0.0.1",
+  "description": "corner-server for generated in corn-cli",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:hot": "rm -rf build && rm -rf .cache",
+    "watch:hot": "yarn clean:hot && webpack && node-hot",
+    "parcel:hot": "yarn clean:hot && parcel watch ./src/index --out-dir ./build && node ./dist/index -p 3000",
+    "clean:server": "rm -rf dist",
+    "pack:server": "yarn clean:hot && webpack",
+    "build:server": "yarn clean:hot && yarn clean:server && babel src --presets latest -d dist",
+    "run:server": "yarn build:server && node ./dist/index -p 3000"
+  },
+  "keywords": [
+    "corner-server"
+  ],
+  "author": "ghostcorn",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^1.3.2",
+    "babel-runtime": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "commander": "^2.13.0",
+    "cors": "^2.8.4",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.2",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.23.1",
+    "mime": "^2.2.0",
+    "moment": "^2.20.1",
+    "mongoose": "^4.13.9",
+    "mongoose-class-wrapper": "^0.9.0",
+    "morgan": "^1.9.0",
+    "request": "2.83.0",
+    "uuid": "^3.1.0",
+    "ws": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "node-hot-loader": "^1.5.2",
+    "parcel-bundler": "^1.5.1",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.10.0"
+  }
+}

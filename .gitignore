@@ -1,0 +1,17 @@
+#node_modules
+/node_modules
+/server/node_modules
+/client/node_modules
+
+#production
+/server/dist
+/client/dist
+
+#yarn
+/yarn.*
+/server/yarn.*
+/client/yarn.*
+
+#DS_Store
+.DS_Store
+/server/.DS_Store

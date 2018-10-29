@@ -1,0 +1,15 @@
+{
+  "manifest": {
+    "basePath": "/src/"
+  },
+  "proxy": {
+    "/restful": {
+      "target": "http://localhost:3000/",
+      "changeOrigin": true
+    },
+    "/graphql/endpoint": {
+      "target": "http://localhost:3000/",
+      "changeOrigin": true
+    }
+  }
+}
